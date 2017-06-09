@@ -1,0 +1,1 @@
+Packages may get excluded due to conflicting requirements among user packages or due to conflicting requirements between a user package and the resolver compiler. If all of the packages have a conflict with the compiler then all of them may get commented out.
