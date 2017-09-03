@@ -140,8 +140,7 @@ type CodeTable = [(Char, [Bit])]
 
 -- | Fast Encoding for a String
 codeList :: CodeTable -> String -> [Bit]
-codeList _ [] = []
-codeList table (x:xs) = codeBits table x ++ codeList table xs
+codeList table = foldl' [] (\b (y:ys) -> codeBits y ++ b)
 
 -- Helper method to encode one single character
 codeBits :: CodeTable -> Char -> [Bit]
